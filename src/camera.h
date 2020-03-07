@@ -352,6 +352,10 @@ struct Camera : ICamera {
     }
 
     virtual void update() {
+        if (!doUpdate)
+            return;;
+
+
         if (shake > 0.0f) {
             shake = max(0.0f, shake - Core::deltaTime);
             Input::setJoyVibration(cameraIndex,  clamp(shake, 0.0f, 1.0f), 0);

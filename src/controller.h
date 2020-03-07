@@ -32,6 +32,7 @@ struct ICamera {
     bool         firstPerson;
     bool         centerView;
     TR::Location eye, target;
+    bool doUpdate = true;
 
     ICamera() : cameraIndex(0), reflectPlane(NULL), angle(0.0f), shake(0.0f), centerView(false) {}
 

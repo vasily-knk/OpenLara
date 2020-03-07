@@ -15,7 +15,7 @@
 #include "extension.h"
 
 #if defined(_DEBUG) && defined(_GAPI_GL) && !defined(_GAPI_GLES)
-    #define DEBUG_RENDER
+    //#define DEBUG_RENDER
 #endif
 
 #ifdef DEBUG_RENDER

@@ -204,7 +204,7 @@ enum JoyKey {
 };
 
 enum ControlKey {
-    cLeft, cRight, cUp, cDown, cJump, cWalk, cAction, cWeapon, cLook, cDuck, cDash, cRoll, cInventory, cStart, cMAX
+    cLeft, cRight, cUp, cDown, cJump, cWalk, cAction, cWeapon, cLook, cDuck, cDash, cRoll, cInventory, cStart, cCamLock, cMAX
 };
 
 struct KeySet {
@@ -892,12 +892,13 @@ namespace Core {
             ctrl.keys[ cWalk      ] = KeySet( ikShift,  jkRB     );
             ctrl.keys[ cAction    ] = KeySet( ikCtrl,   jkA      );
             ctrl.keys[ cWeapon    ] = KeySet( ikSpace,  jkY      );
-            ctrl.keys[ cLook      ] = KeySet( ikC,      jkLB     );
+            ctrl.keys[ cLook      ] = KeySet( ikC,      jkNone     );
             ctrl.keys[ cDuck      ] = KeySet( ikZ,      jkLT     );
             ctrl.keys[ cDash      ] = KeySet( ikX,      jkRT     );
             ctrl.keys[ cRoll      ] = KeySet( ikA,      jkB      );
             ctrl.keys[ cInventory ] = KeySet( ikEscape, jkSelect );
             ctrl.keys[ cStart     ] = KeySet( ikEnter,  jkStart  );
+            ctrl.keys[ cCamLock   ] = KeySet( ikQ    ,  jkLB);
         }
 
     // player 2
@@ -922,6 +923,7 @@ namespace Core {
             ctrl.keys[ cRoll      ] = KeySet( ikNone,   jkB      );
             ctrl.keys[ cInventory ] = KeySet( ikNone,   jkSelect );
             ctrl.keys[ cStart     ] = KeySet( ikNone,   jkStart  );
+            ctrl.keys[ cCamLock   ] = KeySet( ikNone,   jkNone   );
         }
 
     // use S key for action on Mac because Ctrl + Left/Right used by system (default)

@@ -8,8 +8,9 @@
 #endif
 
 #ifdef _OS_WIN
-    #include <gl/GL.h>
-    #include <gl/glext.h>
+#define GLEW_STATIC
+#include <GL/glew.h>
+
 #elif _OS_ANDROID
     #include <dlfcn.h>
 

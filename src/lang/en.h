@@ -88,7 +88,7 @@ const char *STR_EN[] = { ""
     , "Retargeting"
     , "Multi-aiming"
     // controls
-    , "Left", "Right", "Run", "Back", "Jump", "Walk", "Action", "Draw Weapon", "Look", "Duck", "Dash", "Roll", "Inventory", "Start"
+    , "Left", "Right", "Run", "Back", "Jump", "Walk", "Action", "Draw Weapon", "Look", "Duck", "Dash", "Roll", "Inventory", "Start", "CamLock"
     , STR_KEYS
 // inventory items
     , "Unknown"

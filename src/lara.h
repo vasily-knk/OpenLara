@@ -2941,6 +2941,12 @@ struct Lara : Character {
     virtual void updateState() {
         Character::updateState();
 
+        if (input & CAM_LOCK && !(lastInput & CAM_LOCK))
+        {
+            //camera->mode = camera->doUpdate ? ICamera::MODE_FOLLOW : ICamera::MODE_HEAVY;
+            camera->doUpdate = !camera->doUpdate;
+        }
+
         if (camera->mode != ICamera::MODE_FOLLOW)
             return;
 
@@ -3051,6 +3057,7 @@ struct Lara : Character {
         if (Input::state[pid][cWalk])      input |= WALK;
         if (Input::state[pid][cAction])    input |= ACTION;
         if (Input::state[pid][cWeapon])    input |= WEAPON;
+        if (Input::state[pid][cCamLock])   input |= CAM_LOCK;
         if (Input::state[pid][cLook] && canLookAt()) input = LOOK;
         //if (Input::state[pid][cStepRight]) input  = WALK  | RIGHT;
         //if (Input::state[pid][cStepLeft])  input  = WALK  | LEFT;

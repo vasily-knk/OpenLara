@@ -6374,6 +6374,9 @@ namespace TR {
                     for (int y = uv.y; y < uv.w; y++) {
                         for (int x = uv.x; x < uv.z; x++) {
                             ptr[x] = tiles16[t->tile].color[y * 256 + x];
+                            auto const temp = ptr[x].r;
+                            ptr[x].r = ptr[x].b;
+                            ptr[x].b = temp;
                         }
                         ptr += 256;
                     }
